@@ -1,0 +1,14 @@
+{
+  "name": "spoon-rewards-scripts",
+  "private": true,
+  "description": "Admin scripts: seed the menu, make an admin, generate spoon QR codes",
+  "scripts": {
+    "seed": "node seed.js",
+    "set-admin": "node set-admin.js",
+    "spoons": "node generate-spoons.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,25 @@
+node_modules/
+.expo/
+dist/
+web-build/
+ios/
+android/
+*.log
+.DS_Store
+
+# secrets
+.env
+frontend/.env
+backend/.firebaserc
+*service-account*.json
+*-firebase-adminsdk-*.json
+
+# generated spoon codes (keep these private)
+backend/scripts/out/
+
+# firebase
+backend/.firebase/
+backend/functions/node_modules/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

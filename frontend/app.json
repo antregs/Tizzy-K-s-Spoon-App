@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Spoon Rewards",
+    "slug": "spoon-rewards",
+    "scheme": "spoonrewards",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FFE4EE",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B9B96"
+    },
+    "ios": {
+      "bundleIdentifier": "com.tizzyks.spoonrewards",
+      "buildNumber": "1",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Spoon Rewards uses the camera to scan the QR code on your Tizzy K's spoon.",
+        "NSPhotoLibraryUsageDescription": "Choose a photo of your spoon's QR code, or a profile picture.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.tizzyks.spoonrewards",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFE4EE"
+      },
+      "permissions": ["CAMERA"]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "name": "Spoon Rewards – Tizzy K's Cereal Ice Cream",
+      "shortName": "Spoon Rewards",
+      "themeColor": "#0B9B96",
+      "backgroundColor": "#FFE4EE",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-web-browser",
+      ["expo-camera", { "cameraPermission": "Spoon Rewards uses the camera to scan the QR code on your Tizzy K's spoon." }],
+      ["expo-image-picker", { "photosPermission": "Choose a photo of your spoon's QR code, or a profile picture." }],
+      ["expo-notifications", { "icon": "./assets/adaptive-icon.png", "color": "#0B9B96" }]
+    ],
+    "extra": {
+      "eas": { "projectId": "REPLACE_WITH_EAS_PROJECT_ID" }
+    }
+  }
+}

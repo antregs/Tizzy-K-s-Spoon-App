@@ -1,0 +1,58 @@
+rules_version = '2';
+
+// Spoon Rewards security rules.
+// Punches, spoons, rewards and votes are written ONLY by Cloud Functions
+// (which bypass these rules). Members can edit a few profile fields.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isAdmin() { return signedIn() && request.auth.token.admin == true; }
+    function isMe(uid) { return signedIn() && request.auth.uid == uid; }
+
+    // Menu, pop-ups, events, banners, shops, settings: public read, admin write.
+    match /catalog/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Weekly vote tallies: public read. Each member can read their own ballot.
+    match /polls/{week} {
+      allow read: if true;
+      allow write: if false;
+      match /voters/{uid} {
+        allow read: if isMe(uid) || isAdmin();
+        allow write: if false;
+      }
+    }
+
+    match /users/{uid} {
+      allow read: if isMe(uid) || isAdmin();
+      allow create, delete: if false;          // created by createProfile()
+      allow update: if isMe(uid)
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['name', 'email', 'phone', 'school', 'photoURL', 'notifications', 'pushToken'])
+        && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 60
+        && request.resource.data.school is string && request.resource.data.school.size() <= 80
+        && request.resource.data.phone is string && request.resource.data.phone.size() <= 30
+        && request.resource.data.email is string && request.resource.data.email.size() <= 120
+        && request.resource.data.photoURL is string && request.resource.data.photoURL.size() <= 150000
+        && request.resource.data.notifications is bool
+        && request.resource.data.pushToken is string && request.resource.data.pushToken.size() <= 200;
+
+      match /rewards/{id} {
+        allow read: if isMe(uid) || isAdmin();
+        allow write: if false;
+      }
+      match /activity/{id} {
+        allow read: if isMe(uid) || isAdmin();
+        allow write: if false;
+      }
+    }
+
+    // Server-only collections
+    match /spoons/{hash}        { allow read, write: if false; }
+    match /referralCodes/{code} { allow read, write: if false; }
+    match /redemptions/{code}   { allow read: if isAdmin(); allow write: if false; }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "catalog/flavors": {
+    "weekId": "2026-W47",
+    "items": [
+      { "id": "brown-bear", "name": "Brown Bear Tracks", "desc": "Cocoa cereal milk with fudge tracks and peanut-butter crunch.", "emoji": "🐻" },
+      { "id": "risd-rainbow", "name": "RISD Rainbow Swirl", "desc": "Fruity cereal milk swirled with rainbow cereal crunch.", "emoji": "🌈" },
+      { "id": "jwu-wildcat", "name": "JWU Cinnamon Toast Brûlée", "desc": "Cinnamon-toast cereal milk with a torched-sugar crackle — a nod to JWU's culinary chefs.", "emoji": "🐾" },
+      { "id": "coffee-milk", "name": "Coffee Milk Crunch", "desc": "Rhode Island coffee milk steeped with honey-oat cereal.", "emoji": "☕" }
+    ]
+  },
+  "catalog/popups": {
+    "items": [
+      { "id": "brown-u", "name": "Brown University", "address": "The Main Green, Providence, RI", "note": "Weekday afternoons" },
+      { "id": "jwu", "name": "Johnson & Wales University", "address": "8 Abbott Park Place, Providence, RI 02903", "note": "Gaebe Commons, Downcity Campus" },
+      { "id": "hope-st", "name": "Hope Street Farmers Market", "address": "Lippitt Park, Providence, RI", "note": "Saturday mornings" },
+      { "id": "risd", "name": "RISD Museum Steps", "address": "20 N Main St, Providence, RI", "note": "Friday evenings" }
+    ]
+  },
+  "catalog/events": {
+    "items": [
+      { "id": "finals-fuel", "title": "Finals Fuel Pop-Up (sample)", "date": "2026-11-19", "time": "2–6 PM", "place": "Brown University · Main Green" },
+      { "id": "hope-market", "title": "Hope Street Market (sample)", "date": "2026-11-21", "time": "9 AM–1 PM", "place": "Lippitt Park" },
+      { "id": "jwu-gaebe", "title": "JWU Study Break Scoops (sample)", "date": "2026-12-02", "time": "12–4 PM", "place": "Johnson & Wales · Gaebe Commons" },
+      { "id": "risd-late", "title": "RISD Late Night Scoops (sample)", "date": "2026-12-04", "time": "7–10 PM", "place": "RISD Museum Steps" }
+    ]
+  },
+  "catalog/banners": {
+    "items": [
+      { "id": "b1", "title": "Cereal milk, churned fresh", "subtitle": "Vote for this week's flavors.", "emoji": "🥣", "color": "turquoise" },
+      { "id": "b2", "title": "Find us on campus", "subtitle": "Brown, RISD & Johnson & Wales pop-ups.", "emoji": "🎓", "color": "pink" },
+      { "id": "b3", "title": "Bring your spoon", "subtitle": "Scan it every visit to earn punches.", "emoji": "🥄", "color": "turquoise" }
+    ]
+  },
+  "catalog/shops": {
+    "items": [
+      { "id": "pvd", "name": "Providence", "address": "365 S. Water St, Providence, RI", "note": "Our container shop by the Pedestrian Bridge" },
+      { "id": "warren", "name": "Warren", "address": "747 Main St, Warren, RI", "note": "On the East Bay Bike Path" }
+    ]
+  },
+  "catalog/settings": {
+    "spoonPrice": "$5",
+    "spoonWhere": "the Tizzy Kar pop-up",
+    "flashSale": { "active": false, "text": "" }
+  }
+}
