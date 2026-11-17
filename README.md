@@ -1,5 +1,7 @@
 # Spoon Rewards — Tizzy K's Cereal Ice Cream
 
+**▶ Try it live:** https://antregs.github.io/Tizzy-K-s-Spoon-App/ (demo version — works in any browser, on iPhone too; your account is saved in your browser)
+
 The loyalty app for Tizzy K's: a digital punch card linked to a collapsible spoon, rewards, and weekly flavor and pop-up voting. One codebase runs as an **iPhone app, an Android app and a website**.
 
 - **Free account (anyone):** vote on Flavors of the Week and the next pop-up location, see events and shops.
@@ -23,6 +25,7 @@ spoon-rewards-app/
 │   ├── firestore.rules       Security rules
 │   ├── database/seed-data.json  Starter menu (flavors, pop-ups incl. Johnson & Wales, events, shops)
 │   └── scripts/              seed.js · set-admin.js · generate-spoons.js (QR sticker sheets)
+├── web/index.html            Single-file demo version (what the live link above serves)
 └── docs/
     ├── DEPLOY.md             Step-by-step: Firebase, website, App Store, Google Play
     └── ADMIN.md              Running the program day to day
